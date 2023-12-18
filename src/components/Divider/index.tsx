@@ -7,7 +7,7 @@ export function Divider({ className, ...props }: DividerProps) {
     <Separator.Root
       decorative
       orientation="horizontal"
-      className={`bg-dark-100 h-px w-full ` + className}
+      className={`h-px w-full bg-dark-100 ` + className}
       {...props}
     />
   )
