@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       gridTemplateColumns: {
         display: 'repeat(4, minmax(13.75rem, 1fr))',
+        nominees: 'repeat(5, minmax(13.75rem, 1fr))',
       },
       backgroundColor: {
         dark: {

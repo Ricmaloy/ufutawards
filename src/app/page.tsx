@@ -22,7 +22,7 @@ export default function Home() {
       </span>
 
       <div className="mt-8 grid grid-cols-display gap-3">
-        <Category.Root>
+        <Category.Root href={'/category/caixa'}>
           <AwardIcon />
           <Category.Checkmark />
           <Category.Title>Melhor caixa</Category.Title>
@@ -33,7 +33,7 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/repique'}>
           <AwardIcon />
           <Category.Checkmark />
           <Category.Title>Melhor repique</Category.Title>
@@ -44,7 +44,7 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/tamborim'}>
           <AwardIcon />
           <Category.Checkmark />
           <Category.Title>Melhor tamborim</Category.Title>
@@ -55,9 +55,9 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/chocalho'}>
           <AwardIcon />
-          <Category.Title>Melhor tamborim</Category.Title>
+          <Category.Title>Melhor chocalho</Category.Title>
           <Category.Description>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
@@ -65,9 +65,9 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/marcacao'}>
           <AwardIcon />
-          <Category.Title>Melhor tamborim</Category.Title>
+          <Category.Title>Melhor marcação</Category.Title>
           <Category.Description>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
@@ -85,10 +85,10 @@ export default function Home() {
       </span>
 
       <div className="mt-8 grid grid-cols-display gap-3">
-        <Category.Root>
+        <Category.Root href={'/category/fantasia'}>
           <AwardIcon />
           <Category.Checkmark />
-          <Category.Title>Melhor caixa</Category.Title>
+          <Category.Title>Melhor fantasia</Category.Title>
           <Category.Description>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
@@ -96,10 +96,10 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/bocaverde'}>
           <AwardIcon />
           <Category.Checkmark />
-          <Category.Title>Melhor repique</Category.Title>
+          <Category.Title>Boquinha verde</Category.Title>
           <Category.Description>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
@@ -107,9 +107,9 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/fumanterevelacao'}>
           <AwardIcon />
-          <Category.Title>Melhor tamborim</Category.Title>
+          <Category.Title>Fumante revelação</Category.Title>
           <Category.Description>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
@@ -117,9 +117,9 @@ export default function Home() {
           <Category.Counter indicates={9} />
         </Category.Root>
 
-        <Category.Root>
+        <Category.Root href={'/category/bongaydorme'}>
           <AwardIcon />
-          <Category.Title>Melhor tamborim</Category.Title>
+          <Category.Title>Bonga y dorme</Category.Title>
           <Category.Description>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry
