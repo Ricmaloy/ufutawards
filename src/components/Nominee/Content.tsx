@@ -16,7 +16,7 @@ export function Content({
     <>
       <Divider className="bg-[#6C6C6C]" />
       <div
-        className="flex h-[91px] flex-col items-center gap-3 rounded-b bg-dark-400 p-5"
+        className="flex h-[91px] cursor-pointer flex-col items-center gap-3 rounded-b bg-dark-400 p-5"
         {...props}
       >
         <span className="text-[10px] text-white">
