@@ -20,6 +20,11 @@ const config: Config = {
           700: '#1F78FF',
         },
       },
+      color: {
+        gray: {
+          400: '#C6C6C6',
+        },
+      },
       borderColor: {
         dark: {
           100: '#313131',

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Epilogue } from 'next/font/google'
-import { Header } from '@/components/Header'
 
 import './globals.css'
 
@@ -19,10 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <body className={epilogue.className + ' flex justify-center bg-dark-900'}>
-        <div className="mb-10 flex w-full max-w-[1240px] flex-col">
-          <Header />
-          <div>{children}</div>
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   )
