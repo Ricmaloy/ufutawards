@@ -6,8 +6,11 @@ import { GoogleIcon } from '@/images/Google'
 import * as Carrousel from '@/components/Carrousel'
 import GroupAward from '@/images/GroupAward'
 import Achievement from '@/images/Achievement'
+import { useAuth } from '@/hooks/useAuth'
 
 export default function Login() {
+  const { signIn } = useAuth()
+
   return (
     <div className="grid h-screen w-screen place-items-center">
       <div className="flex h-full max-h-[573px] w-full max-w-[928px]">
@@ -21,7 +24,10 @@ export default function Login() {
             <p className="text-sm text-gray-400">
               Para votar nos melhores do ano entre com sua conta Google abaixo!
             </p>
-            <button className="my-8 flex items-center justify-center gap-3 rounded bg-ocean-700 py-4 text-center text-sm font-bold text-white">
+            <button
+              onClick={signIn}
+              className="my-8 flex items-center justify-center gap-3 rounded bg-ocean-700 py-4 text-center text-sm font-bold text-white"
+            >
               <GoogleIcon />
               Entrar com Google
             </button>
@@ -55,30 +61,6 @@ export default function Login() {
             <Carrousel.Chevron side="right" />
           </Carrousel.Menu>
         </Carrousel.Root>
-        {/* <div className="flex w-full max-w-[552px] flex-col bg-dark-200 py-11">
-          <div className="flex flex-1 flex-col">
-            <p>
-              Vote nos seus preferidos para a maior premiação de Baterias
-              Universitárias
-            </p>
-          </div>
-          <div className="flex justify-center gap-4">
-            <ChevronLeft
-              className="cursor-pointer text-gray-400"
-              onClick={carrouselClickChange}
-            />
-
-            <div className="flex items-center gap-1">
-              <div className={bar()} />
-              <div className="h-1 w-10 rounded bg-ocean-700" />
-            </div>
-
-            <ChevronRight
-              className="cursor-pointer text-gray-400"
-              onClick={carrouselClickChange}
-            />
-          </div>
-        </div> */}
       </div>
     </div>
   )

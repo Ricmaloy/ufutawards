@@ -1,10 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import { Bell } from 'lucide-react'
+import { LogOut } from 'lucide-react'
 import { Divider } from '../Divider'
+import { useAuth } from '@/hooks/useAuth'
 
 export function Header() {
+  const { signOut } = useAuth()
   return (
     <>
       <header className="flex items-center justify-between py-4">
@@ -21,9 +23,12 @@ export function Header() {
           <span className="text-sm text-white">Ricardo Zamboni</span>
         </div>
 
-        <div className="flex h-9 w-9 cursor-pointer items-center justify-center">
-          <Bell className="h-4 w-4 text-white" />
-        </div>
+        <button
+          onClick={signOut}
+          className="flex h-9 w-9 cursor-pointer items-center justify-center"
+        >
+          <LogOut className="h-4 w-4 text-white" />
+        </button>
       </header>
       <Divider />
     </>
