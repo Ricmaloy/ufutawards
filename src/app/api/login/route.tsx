@@ -9,6 +9,8 @@ customInitApp()
 export async function POST(request: NextRequest, response: NextResponse) {
   const authorization = headers().get('Authorization')
 
+  console.log(authorization)
+
   if (authorization?.startsWith('Bearer ')) {
     const idToken = authorization.split('Bearer ')[1]
 

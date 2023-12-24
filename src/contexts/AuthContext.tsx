@@ -1,20 +1,15 @@
+'use client'
+
 import { useState, createContext, useEffect, ReactNode } from 'react'
 import {
+  User,
   getRedirectResult,
   signInWithRedirect,
   signOut as LogOff,
-  onAuthStateChanged,
 } from 'firebase/auth'
 import { auth, provider } from '../lib/firebase'
 import { useRouter } from 'next/navigation'
 import router from 'next/router'
-
-type User = {
-  id: string
-  name: string
-  avatar: string
-  email: string
-}
 
 type AuthContextType = {
   user: User | undefined
@@ -34,7 +29,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
   const [loading, setLoading] = useState<boolean>(true)
   const router = useRouter()
 
-  console.log({ user })
+  // console.log({ user, loading })
 
   useEffect(() => {
     getRedirectResult(auth).then(async (userCred) => {
@@ -49,23 +44,24 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         },
       }).then((response) => {
         if (response.status === 200) {
-          const userData = {
-            id: userCred.user.uid,
-            name: userCred.user.displayName,
-            avatar: userCred.user.photoURL,
-            email: userCred.user.email,
-          }
-          setUser(userData as User)
-
-          router.push('/')
+          router.push('/feed')
         }
       })
     })
-
     return () => {
       getRedirectResult(auth)
     }
   }, [router])
+
+  useEffect(() => {
+    return auth.onIdTokenChanged(async (user) => {
+      if (user) {
+        setUser(user as User)
+      } else {
+        setUser(undefined)
+      }
+    })
+  }, [])
 
   async function signIn() {
     signInWithRedirect(auth, provider)

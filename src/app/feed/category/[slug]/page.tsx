@@ -10,7 +10,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <Link
-        href={'/'}
+        href={'/feed'}
         className="mt-4 flex items-center gap-1 text-sm text-white"
       >
         <ChevronLeft />
