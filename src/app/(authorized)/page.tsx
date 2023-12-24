@@ -5,8 +5,9 @@ import { Divider } from '@/components/Divider'
 import * as Category from '@/components/Category'
 import { AwardIcon } from '@/images/Award'
 import { Progress } from '@/components/Progress'
+import { withAuth } from '@/hooks/useRoute'
 
-export default function Home() {
+const HomePage = () => {
   return (
     <>
       <Progress />
@@ -130,3 +131,7 @@ export default function Home() {
     </>
   )
 }
+
+const Home = withAuth(HomePage)
+
+export default Home

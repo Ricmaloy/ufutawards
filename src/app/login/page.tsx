@@ -6,8 +6,12 @@ import { GoogleIcon } from '@/images/Google'
 import * as Carrousel from '@/components/Carrousel'
 import GroupAward from '@/images/GroupAward'
 import Achievement from '@/images/Achievement'
+import { withPublic } from '@/hooks/useRoute'
+import { useAuth } from '@/hooks/useAuth'
 
-export default function Login() {
+const LoginPage = () => {
+  const { signInWithGoogle } = useAuth()
+
   return (
     <div className="grid h-screen w-screen place-items-center">
       <div className="flex h-full max-h-[573px] w-full max-w-[928px]">
@@ -21,7 +25,10 @@ export default function Login() {
             <p className="text-sm text-gray-400">
               Para votar nos melhores do ano entre com sua conta Google abaixo!
             </p>
-            <button className="my-8 flex items-center justify-center gap-3 rounded bg-ocean-700 py-4 text-center text-sm font-bold text-white">
+            <button
+              onClick={signInWithGoogle}
+              className="my-8 flex items-center justify-center gap-3 rounded bg-ocean-700 py-4 text-center text-sm font-bold text-white"
+            >
               <GoogleIcon />
               Entrar com Google
             </button>
@@ -83,3 +90,7 @@ export default function Login() {
     </div>
   )
 }
+
+const Login = withPublic(LoginPage)
+
+export default Login

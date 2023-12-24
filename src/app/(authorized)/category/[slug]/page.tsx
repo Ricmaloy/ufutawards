@@ -5,8 +5,9 @@ import Link from 'next/link'
 import * as Nominee from '@/components/Nominee'
 import * as ConfirmDialog from '@/components/Dialog'
 import { Divider } from '@/components/Divider'
+import { withAuth } from '@/hooks/useRoute'
 
-export default function CategoryPage({ params }: { params: { slug: string } }) {
+const CategoryPage = ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <Link
@@ -133,3 +134,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
     </>
   )
 }
+
+const Category = withAuth(CategoryPage)
+
+export default Category

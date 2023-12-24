@@ -19,7 +19,6 @@ const CarrouselContext = createContext({} as CarrouselContextType)
 
 export function Root({ ...props }: RootProps) {
   const [activeItem, setActiveItem] = useState(1)
-  console.log(activeItem)
 
   const carrouselAutoChange = useCallback(() => {
     if (activeItem === 2) {
