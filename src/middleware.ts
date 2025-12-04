@@ -21,8 +21,6 @@ export async function middleware(request: NextRequest) {
     cookieSerializeOptions: authConfig.cookieSerializeOptions,
     cookieSignatureKeys: authConfig.cookieSignatureKeys,
     serviceAccount: authConfig.serviceAccount,
-    experimental_enableTokenRefreshOnExpiredKidHeader:
-      authConfig.experimental_enableTokenRefreshOnExpiredKidHeader,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handleValidToken: async ({ token, decodedToken, customToken }, headers) => {
       // Authenticated user should not be able to access /login, /register and /reset-password routes

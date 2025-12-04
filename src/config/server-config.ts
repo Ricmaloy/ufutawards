@@ -30,6 +30,5 @@ export const authConfig = {
   serviceAccount: serverConfig.serviceAccount,
   enableMultipleCookies: true,
   enableCustomToken: true,
-  experimental_enableTokenRefreshOnExpiredKidHeader: true,
   debug: true,
 }
