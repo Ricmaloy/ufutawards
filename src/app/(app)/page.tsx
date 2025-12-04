@@ -150,10 +150,15 @@ async function getCategories() {
 }
 
 export default async function Home() {
-  const { categoriesA, categoriesB, categoriesSize, votesSize } = await getCategories()
+  const { categoriesA, categoriesB, categoriesSize, votesSize } =
+    await getCategories()
 
-  const sideACategories = categoriesA.filter((category) => category.side === 'A')
-  const sideBCategories = categoriesB.filter((category) => category.side === 'B')
+  const sideACategories = categoriesA.filter(
+    (category) => category.side === 'A',
+  )
+  const sideBCategories = categoriesB.filter(
+    (category) => category.side === 'B',
+  )
 
   return (
     <>
@@ -190,8 +195,8 @@ export default async function Home() {
           <p className="text-neutral-950 font-bold text-xl leading-5">Lado B</p>
           <span className="text-neutral-700 text-sm leading-5 mt-2">
             A localização você ja conhece e sabe que é de lei, então eis aqui o
-            puro suco da Bateria Ufuteria em todo seu louvor e muitas
-            gracinhas e piadinhas
+            puro suco da Bateria Ufuteria em todo seu louvor e muitas gracinhas
+            e piadinhas
           </span>
         </div>
 

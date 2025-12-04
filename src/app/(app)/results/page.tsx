@@ -7,7 +7,7 @@ import { VisitorsAreaChart } from '@/components/VisitorsAreaChart'
 import { VotesRadialChart } from '@/components/VotesRadialChart'
 import { authConfig } from '@/config/server-config'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
-import { ArrowLeft, CalendarArrowDown, Clock, PawPrint, Trophy } from 'lucide-react'
+import { ArrowLeft, CalendarArrowDown, Clock, Trophy } from 'lucide-react'
 import { getTokens } from 'next-firebase-auth-edge'
 import { cookies } from 'next/headers'
 
@@ -127,7 +127,9 @@ export default async function Results() {
       </Link>
 
       <div className="flex flex-col gap-2 md:mt-6">
-        <h1 className="text-neutral-950 text-xl font-bold">Resultados Gerais</h1>
+        <h1 className="text-neutral-950 text-xl font-bold">
+          Resultados Gerais
+        </h1>
         <span className="text-neutral-700 italic">
           Aqui as estatísticas como um todo da plataforma, contabilizando
           acessos, votos e visualizações para um melhor insight da ferramenta
@@ -165,7 +167,9 @@ export default async function Results() {
       </div>
 
       <div className="flex flex-col gap-2 mt-6">
-        <h1 className="text-neutral-950 text-xl font-bold">Resultados Individuais</h1>
+        <h1 className="text-neutral-950 text-xl font-bold">
+          Resultados Individuais
+        </h1>
         <span className="text-neutral-700 italic">
           Aqui estão os vencedores de cada categoria, dispostos em gráficos para
           que facilite a visualização.

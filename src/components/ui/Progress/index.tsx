@@ -9,7 +9,6 @@ export type ProgressProps = {
 export function Progress({ totalCategories, votedCategories }: ProgressProps) {
   const progress = Math.ceil((votedCategories * 100) / totalCategories)
 
-
   return (
     <>
       <div className="my-8">

@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import Icon from '@/assets/icon.svg'
 import {
   Card,
   CardContent,

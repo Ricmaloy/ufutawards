@@ -71,9 +71,8 @@ export function CategoryPieChart({
 }: CategoryChartProps) {
   const totalVotes = useMemo(() => {
     return votes.reduce((acc, curr) => acc + curr.count, 0)
-    
   }, [votes])
-  
+
   console.log(votes, totalVotes)
   return (
     <div>

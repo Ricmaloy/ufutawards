@@ -3,13 +3,12 @@
 import { useState } from 'react'
 import { UserCredential } from 'firebase/auth'
 import { useLoadingCallback } from 'react-loading-hook'
-import { Trophy, LogIn } from 'lucide-react'
+import { LogIn } from 'lucide-react'
 import Banner from '@/assets/banner.png'
 import { loginWithCredential } from '@/api'
 import { LoadingIcon } from '@/components/ui/icons'
 import { getFirebaseAuth } from '../auth/firebase'
 import { useRedirectAfterLogin } from '../shared/useRedirectAfterLogin'
-import { useRedirectParam } from '../shared/useRedirectParam'
 import { getGoogleProvider, loginWithProvider } from './firebase'
 import {
   Card,
@@ -21,7 +20,6 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 export function LoginPage() {
   const [hasLogged, setHasLogged] = useState(false)
-  const redirect = useRedirectParam()
   const redirectAfterLogin = useRedirectAfterLogin()
 
   async function handleLogin(credential: UserCredential) {
@@ -77,9 +75,7 @@ export function LoginPage() {
         )}
         {hasLogged && (
           <div className="flex items-center gap-4 mb-6">
-            <span>
-              Içando ancoras...
-            </span>
+            <span>Içando ancoras...</span>
             <LoadingIcon />
           </div>
         )}

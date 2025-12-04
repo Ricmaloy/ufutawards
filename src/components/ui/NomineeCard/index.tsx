@@ -47,7 +47,9 @@ export function NomineeCard({
         {isNomineeVoted && (
           <span className="text-xs text-neutral-600">Você votou em</span>
         )}
-        <p className="text-lg text-neutral-950 font-bold tracking-wider">{name}</p>
+        <p className="text-lg text-neutral-950 font-bold tracking-wider">
+          {name}
+        </p>
       </div>
     </Card>
   )

@@ -90,7 +90,8 @@ export function VisitorsAreaChart() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 leading-none text-neutral-600">
-              Dados coletados entre os meses de Janeiro de 2025 e Janeiro de 2026
+              Dados coletados entre os meses de Janeiro de 2025 e Janeiro de
+              2026
             </div>
           </div>
         </div>

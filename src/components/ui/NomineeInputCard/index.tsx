@@ -30,7 +30,10 @@ export function NomineeInputCard({
         height={244}
         className="h-full overflow-hidden object-cover"
       />
-      <Separator orientation="horizontal" className="bg-neutral-200 h-px w-full" />
+      <Separator
+        orientation="horizontal"
+        className="bg-neutral-200 h-px w-full"
+      />
       <div className="flex flex-col w-full">
         <p className="text-neutral-950 py-2 px-2 text-center text-sm leading-5 truncate overflow-hidden whitespace-nowrap">
           {name}

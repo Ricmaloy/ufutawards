@@ -68,8 +68,8 @@ export default function CreateCategory() {
   }
 
   const handleSwitchChange = (isChecked: boolean) => {
-    setCategorySide(isChecked ? 'B' : 'A');
-  };
+    setCategorySide(isChecked ? 'B' : 'A')
+  }
 
   const handleCreateCategory = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -200,8 +200,14 @@ export default function CreateCategory() {
                   Lado da categoria
                 </FieldLabel>
                 <div className="flex items-center gap-2">
-                  <Switch className="w-[52px]" onCheckedChange={handleSwitchChange}/>
-                  <FieldLabel htmlFor="side" className="text-neutral-700 text-sm leading-5">
+                  <Switch
+                    className="w-[52px]"
+                    onCheckedChange={handleSwitchChange}
+                  />
+                  <FieldLabel
+                    htmlFor="side"
+                    className="text-neutral-700 text-sm leading-5"
+                  >
                     Lado {categorySide}
                   </FieldLabel>
                 </div>
