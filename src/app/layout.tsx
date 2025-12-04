@@ -1,30 +1,40 @@
-import type { Metadata } from 'next'
-import { Epilogue } from 'next/font/google'
-
 import './globals.css'
-import { ContextTree } from '@/components/ContextTree'
+import { Metadata } from 'next'
+import { getTokens } from 'next-firebase-auth-edge'
+import { cookies, headers } from 'next/headers'
+import { authConfig } from '../config/server-config'
+import { AuthProvider } from './auth/AuthProvider'
+import { toUser } from './shared/user'
 
-const epilogue = Epilogue({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Ufutaward',
-  description: 'Os prêmios de melhores do ano da Bateria Ufuteria',
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const tokens = await getTokens(await cookies(), {
+    ...authConfig,
+    headers: await headers(),
+  })
+  const user = tokens ? toUser(tokens) : null
+
   return (
-    <html lang="en" className="antialiased">
-      <ContextTree>
-        <body
-          className={epilogue.className + ' flex justify-center bg-dark-900'}
-        >
-          <div>{children}</div>
-        </body>
-      </ContextTree>
+    <html lang="en">
+      <head />
+      <body>
+        <AuthProvider user={user}>{children}</AuthProvider>
+      </body>
     </html>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'Ufutawards 🏆',
+  description:
+    'Vote nos indicados para a maior premiação da Bateria Ufuteria !',
+  icons: '/icon.svg',
+  openGraph: {
+    title: 'Ufutawards 🏆',
+    description: 'A maior premiação da Você Sabe Company!',
+    images: '/opengraph-image.png',
+  },
 }
