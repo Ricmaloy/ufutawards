@@ -72,8 +72,6 @@ export function CategoryPieChart({
   const totalVotes = useMemo(() => {
     return votes.reduce((acc, curr) => acc + curr.count, 0)
   }, [votes])
-
-  console.log(votes, totalVotes)
   return (
     <div>
       <Card className="min-h-[470px] flex flex-col bg-neutral-100 border border-neutral-200">
