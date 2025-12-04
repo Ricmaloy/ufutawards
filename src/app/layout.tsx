@@ -1,7 +1,7 @@
 import './globals.css'
 import { Metadata } from 'next'
 import { getTokens } from 'next-firebase-auth-edge'
-import { cookies, headers } from 'next/headers'
+import { cookies } from 'next/headers'
 import { authConfig } from '../config/server-config'
 import { AuthProvider } from './auth/AuthProvider'
 import { toUser } from './shared/user'
@@ -11,10 +11,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const tokens = await getTokens(await cookies(), {
-    ...authConfig,
-    headers: await headers(),
-  })
+  const tokens = await getTokens(await cookies(), authConfig)
   const user = tokens ? toUser(tokens) : null
 
   return (
